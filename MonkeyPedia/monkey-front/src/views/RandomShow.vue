@@ -5,7 +5,7 @@ export default {
   data: function () {
     return {
       monkeys: [],
-      currentMonkey: {},
+      number: {},
       images: [],
       //   monkeyFilter: "",
     };
@@ -15,12 +15,6 @@ export default {
     axios.get("http://localhost:3000/monkeys.json").then((response) => {
       this.monkeys = response.data;
       console.log(this.monkeys);
-    });
-  },
-  function() {
-    axios.get("http://localhost:3000/images.json").then((response) => {
-      this.images = response.data;
-      console.log(this.images);
     });
   },
 };

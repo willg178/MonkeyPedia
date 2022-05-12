@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import MonkeyIndex from "../views/MonkeyIndex.vue";
+import MonkeyShow from "../views/MonkeyShow.vue";
+import RandomShow from "../views/RandomShow.vue";
 
 const routes = [
   {
@@ -10,8 +12,18 @@ const routes = [
   },
   {
     path: "/monkeys",
-    name: "monkeys",
+    name: "monkeys-index",
     component: MonkeyIndex,
+  },
+  {
+    path: "/monkeys/:id",
+    name: "monkeys-show",
+    component: MonkeyShow,
+  },
+  {
+    path: "/random",
+    name: "random-monkey",
+    component: RandomShow.vue,
   },
   {
     path: "/about",
