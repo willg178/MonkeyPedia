@@ -74,7 +74,7 @@ export default {
         <div class="carousel-item">
           <img
             class="d-block w-100"
-            :src="monkey.images[0].image_url"
+            :src="monkey.images[2].image_url"
             alt="Third slide"
           />
         </div>

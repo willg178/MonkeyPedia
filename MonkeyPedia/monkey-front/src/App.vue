@@ -5,7 +5,7 @@
   </nav> -->
   <nav class="navbar navbar-expand-lg bg-#2c503b">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">MonkeyPedia</a>
+      <a class="text-success">MonkeyPedia</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -34,7 +34,7 @@
             <a class="nav-link" href="http://localhost:8080/gallery">Gallery</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        <form class="d-flex bg-2c503b" role="search">
           <input
             class="form-control me-2"
             type="search"
