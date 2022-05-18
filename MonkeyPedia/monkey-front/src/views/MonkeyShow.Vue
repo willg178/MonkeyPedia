@@ -5,6 +5,7 @@ export default {
   data: function () {
     return {
       monkey: {},
+      images: [],
     };
   },
 
@@ -14,6 +15,16 @@ export default {
       .then((response) => {
         console.log(response.data);
         this.monkey = response.data;
+        console.log(this.monkey.id);
+      });
+  },
+
+  comuted: function () {
+    axios
+      .get("http://localhost:3000/images/" + this.monkey.id + ".json")
+      .then((response) => {
+        console.log(response.data);
+        this.images = response.data;
       });
   },
 };
@@ -32,51 +43,60 @@ export default {
     <div id="location-label">location:</div>
     <div id="monkey-location">{{ monkey.location }}</div>
     <div
-      id="carouselExampleFade"
+      id="carouselExampleIndicators"
       class="carousel slide carousel-fade"
       data-bs-ride="carousel"
     >
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselExampleIndicators"
+          data-slide-to="0"
+          class="active"
+        ></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            :src="monkey.images[0].image_url"
             class="d-block w-100"
-            alt="..."
+            :src="monkey.images[0].image_url"
+            alt="First slide"
           />
         </div>
         <div class="carousel-item">
           <img
+            class="d-block w-100"
             :src="monkey.images[1].image_url"
-            class="d-block w-100"
-            alt="..."
+            alt="Second slide"
           />
         </div>
         <div class="carousel-item">
           <img
-            :src="monkey.images[0].image_url"
             class="d-block w-100"
-            alt="..."
+            :src="monkey.images[0].image_url"
+            alt="Third slide"
           />
         </div>
       </div>
-      <button
+      <a
         class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleFade"
-        data-bs-slide="prev"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="prev"
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
         class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleFade"
-        data-bs-slide="next"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="next"
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
 </template>
@@ -86,7 +106,7 @@ body {
   margin: 0;
   padding: 0;
 }
-#carouselExampleFade {
+#carouselExampleIndicators {
   position: absolute;
   top: 125px;
   right: 100px;

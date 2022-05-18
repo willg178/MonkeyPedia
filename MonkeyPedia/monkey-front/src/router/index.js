@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import MonkeyIndex from "../views/MonkeyIndex.vue";
 import MonkeyShow from "../views/MonkeyShow.vue";
 import RandomShow from "../views/RandomShow.vue";
+import GalleryView from "../views/GalleryView.vue";
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: "/monkeys",
     name: "monkeys-index",
     component: MonkeyIndex,
+  },
+  {
+    path: "/gallery",
+    name: "gallery",
+    component: GalleryView,
   },
   {
     path: "/monkeys/:id",

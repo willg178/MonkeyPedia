@@ -28,7 +28,11 @@ export default {
 
 <template>
   <div class="row">
-    <div v-for="monkey in monkeys" v-bind:key="monkey.id" class="col-sm-3 mb-1">
+    <div
+      v-for="monkey in monkeys"
+      v-bind:key="monkey.id"
+      class="col-sm-3 mb-2 mt-2"
+    >
       <div
         class="card"
         style="
@@ -42,7 +46,6 @@ export default {
           alt="no monke pic :,("
         />
         <div class="card-body bg-success text-white">
-          <h5 class="card-title">{{ monkey.name }}</h5>
           <p class="card-text">
             {{ monkey.description }}
           </p>
